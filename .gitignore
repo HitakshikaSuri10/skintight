@@ -1,0 +1,62 @@
+# Virtual environments
+venv/
+venv310/
+env/
+ENV/
+
+# Model files (large files)
+*.h5
+*.pkl
+*.model
+*.weights
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+
+# Uploads (user uploaded files)
+uploads/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+
+# Archive folders
+archive-2/
