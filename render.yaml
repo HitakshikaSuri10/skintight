@@ -1,9 +1,12 @@
 services:
   - type: web
-    name: skinsight
+    name: skin-detect-app
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: python run.py --host 0.0.0.0 --port 10000
+    # Directory containing the application code
+    workDir: skin-detect-app
+    buildCommand: pip install --no-cache-dir -r requirements.txt
+    # Bind to the port provided by Render
+    startCommand: python run.py --host 0.0.0.0 --port $PORT
     envVars:
-      - key: PORT
-        value: 10000 
+      - key: PYTHON_VERSION
+        value: 3.10.13
