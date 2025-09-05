@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Skin Diagnostic Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="badge">
+                        <i class="lucide lucide-activity"></i>
+                        AI-Powered Skin Analysis
+                        <i class="lucide lucide-arrow-up-right"></i>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Detect Skin Conditions with 
+                        <span class="text-primary">Advanced AI Technology</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Get instant, accurate skin health assessments using cutting-edge machine learning. Upload a photo and receive professional-grade analysis in seconds.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToUpload()">
+                            Start Free Analysis
+                            <i class="lucide lucide-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-secondary">
+                            Learn How It Works
+                            <i class="lucide lucide-arrow-up-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="image-glow"></div>
+                    <img src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg" 
+                         alt="AI skin analysis interface showing dermatological assessment" 
+                         class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-header">
+                <h2 class="features-title">Common Skin Conditions We Detect</h2>
+                <p class="features-description">
+                    Our advanced AI technology provides accurate diagnosis and educational insights for various skin conditions, empowering you with knowledge for better skin health decisions.
+                </p>
+                <button class="btn btn-primary" onclick="scrollToUpload()">Start Skin Analysis</button>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Acne Detection" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Acne Detection</h3>
+                        <p class="feature-description">
+                            Our AI accurately identifies different types of acne including blackheads, whiteheads, and inflammatory lesions. Get personalized treatment recommendations based on severity and skin type analysis.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="Rosacea Analysis" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">Rosacea Analysis</h3>
+                        <p class="feature-description">
+                            Advanced detection of rosacea symptoms including facial redness, visible blood vessels, and papules. Our system identifies triggers and provides targeted care recommendations for symptom management.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                         alt="General Skin Health" class="feature-image">
+                    <div class="feature-content">
+                        <h3 class="feature-title">General Skin Health</h3>
+                        <p class="feature-description">
+                            Comprehensive skin health assessment including texture analysis, hydration levels, and aging indicators. Receive preventive care guidance and lifestyle recommendations for optimal skin wellness.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Tool Section -->
+    <section class="analysis-section" id="analysis-tool">
+        <div class="container">
+            <div class="analysis-header">
+                <h1 class="analysis-title">AI Skin Diagnostic Tool</h1>
+                <p class="analysis-description">
+                    Upload a clear photo of your skin for AI-powered analysis and personalized recommendations
+                </p>
+            </div>
+
+            <div class="analysis-grid">
+                <!-- Upload and Controls -->
+                <div class="upload-section">
+                    <!-- Upload Area -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Upload Image</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="upload-area" id="uploadArea">
+                                <div class="upload-content" id="uploadContent">
+                                    <i class="lucide lucide-upload"></i>
+                                    <div class="upload-text">
+                                        <p class="upload-title">Drop your image here</p>
+                                        <p class="upload-subtitle">or click to browse files</p>
+                                    </div>
+                                    <div class="upload-badges">
+                                        <span class="badge-small">
+                                            <i class="lucide lucide-file-image"></i>
+                                            JPG
+                                        </span>
+                                        <span class="badge-small">
+                                            <i class="lucide lucide-file-image"></i>
+                                            PNG
+                                        </span>
+                                        <span class="badge-small">
+                                            <i class="lucide lucide-camera"></i>
+                                            Camera
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <input type="file" id="fileInput" accept="image/*" style="display: none;">
+
+                            <div class="upload-buttons">
+                                <button class="btn btn-outline" onclick="document.getElementById('fileInput').click()">
+                                    <i class="lucide lucide-file-image"></i>
+                                    Browse
+                                </button>
+                                <button class="btn btn-outline" onclick="openCamera()">
+                                    <i class="lucide lucide-camera"></i>
+                                    Camera
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Controls -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Analysis Settings</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="form-group">
+                                <label class="form-label">Analysis Type</label>
+                                <div class="tabs">
+                                    <button class="tab-button active" data-type="general">General</button>
+                                    <button class="tab-button" data-type="acne">Acne</button>
+                                    <button class="tab-button" data-type="rosacea">Rosacea</button>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Confidence Threshold: <span id="confidenceValue">70</span>%</label>
+                                <input type="range" id="confidenceSlider" min="0" max="100" value="70" class="slider">
+                                <p class="form-help">Only show results above this confidence level</p>
+                            </div>
+
+                            <button class="btn btn-primary btn-full" id="analyzeBtn" onclick="startAnalysis()">
+                                <i class="lucide lucide-eye"></i>
+                                Start Analysis
+                            </button>
+
+                            <div class="progress-container" id="progressContainer" style="display: none;">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progressFill"></div>
+                                </div>
+                                <p class="progress-text" id="progressText">Analyzing...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="results-section">
+                    <div class="card" id="resultsCard" style="display: none;">
+                        <div class="card-header">
+                            <h3 class="card-title">Analysis Results</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="image-container">
+                                <canvas id="resultCanvas" class="result-image"></canvas>
+                                <div class="image-overlay">
+                                    <span id="regionCount">0 region(s) detected</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="conditionsCard" style="display: none;">
+                        <div class="card-header">
+                            <h3 class="card-title">Detected Conditions</h3>
+                            <div class="card-actions">
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="lucide lucide-download"></i>
+                                    Download Report
+                                </button>
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="lucide lucide-share-2"></i>
+                                    Share
+                                </button>
+                                <button class="btn btn-outline btn-sm">
+                                    <i class="lucide lucide-calendar"></i>
+                                    Schedule Follow-up
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div id="conditionsList"></div>
+                        </div>
+                    </div>
+
+                    <div class="card" id="placeholderCard">
+                        <div class="card-content">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">
+                                    <i class="lucide lucide-eye"></i>
+                                </div>
+                                <h3 class="placeholder-title">Upload an image to get started</h3>
+                                <p class="placeholder-description">
+                                    Our AI will analyze your skin photo and provide detailed insights about potential conditions and personalized recommendations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimers -->
+    <section class="disclaimers-section">
+        <div class="container">
+            <div class="disclaimer-card warning">
+                <div class="disclaimer-content">
+                    <i class="lucide lucide-alert-triangle"></i>
+                    <div class="disclaimer-text">
+                        <h4 class="disclaimer-title">Medical Disclaimer</h4>
+                        <p class="disclaimer-description">
+                            This AI diagnostic tool is for informational purposes only and should not replace professional medical advice, diagnosis, or treatment. 
+                            Always consult with a qualified dermatologist or healthcare provider for proper medical evaluation and treatment recommendations. 
+                            The accuracy of AI analysis may vary and should be confirmed by a medical professional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="disclaimer-card info">
+                <div class="disclaimer-content">
+                    <i class="lucide lucide-shield"></i>
+                    <div class="disclaimer-text">
+                        <h4 class="disclaimer-title">Privacy Notice</h4>
+                        <p class="disclaimer-description">
+                            Your uploaded images are processed securely and are not stored on our servers after analysis completion. 
+                            All data is encrypted in transit and processed in compliance with healthcare privacy standards. 
+                            You can delete your analysis results at any time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
